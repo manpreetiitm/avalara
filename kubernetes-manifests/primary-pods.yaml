@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: primary-pods
+  name: primary
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: primary-pods
+      app: primary
   template:
     metadata:
       labels:
-        app: primary-pods
+        app: primary
     spec:
       containers:
         - name: main
