@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: primary
+  namespace: application
 spec:
   replicas: 3
   selector:
@@ -13,7 +14,7 @@ spec:
         app: primary
     spec:
       containers:
-        - name: main
-          image: argoproj/rollouts-demo:green
-          ports:
-            - containerPort: 80
+      - name: primary
+        image: argoproj/rollouts-demo:green
+        ports:
+        - containerPort: 80
